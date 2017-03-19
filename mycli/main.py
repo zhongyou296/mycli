@@ -539,15 +539,6 @@ class MyCli(object):
                     end = time()
                     total += end - start
                     mutating = mutating or is_mutating(status)
-            except UnicodeDecodeError as e:
-                import pymysql
-                if pymysql.VERSION < (0, 6, 7):
-                    message = ('You are running an older version of pymysql.\n'
-                            'Please upgrade to 0.6.7 or above to view binary data.\n'
-                            'Try \'pip install -U pymysql\'.')
-                    self.output(message)
-                else:
-                    raise e
             except KeyboardInterrupt:
                 # get last connection id
                 connection_id_to_kill = sqlexecute.connection_id
