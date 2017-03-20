@@ -2,8 +2,8 @@ Feature: named queries:
   save, use and delete named queries
 
   Scenario: save, use and delete named queries
-     Given we have pgcli installed
-      when we run pgcli
+     Given we have mycli installed
+      when we run mycli
       and we wait for prompt
       and we connect to test database
       then we see database connected
